@@ -5,4 +5,4 @@
     android:name="com.google.android.gms.maps.SupportMapFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="br.ufpi.es.caronasufpi.MapasCaronas" />
+    tools:context="br.ufpi.es.caronasufpi.visao.MapasCaronas" />

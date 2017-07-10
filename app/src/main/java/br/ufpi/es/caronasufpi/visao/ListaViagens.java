@@ -73,7 +73,7 @@ public class ListaViagens extends AppCompatActivity {
         String texto = String.valueOf(l1.toString()) + " - " + String.valueOf(l2.toString());
         Toast.makeText(getApplicationContext(),texto,Toast.LENGTH_LONG).show();
 
-        Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
+        Intent intent = new Intent(this, MapasCaronas.class);
         //carrega a tela principal e passa dados do Usuario
         startActivity(intent);
 

@@ -43,7 +43,7 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".MapasCaronas"
+            android:name=".visao.MapasCaronas"
             android:label="@string/title_activity_mapas_caronas"></activity>
     </application>
 

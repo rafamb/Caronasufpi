@@ -12,14 +12,14 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import br.ufpi.es.caronasufpi.R;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
+public class MapasCaronas extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_maps);
+        setContentView(R.layout.activity_mapas_caronas);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -40,10 +40,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-         //Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-5.056279, -42.789740);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("UFPI"));
+        // Add a marker in Sydney and move the camera
+        LatLng sydney = new LatLng(-34, -151);
+        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
-
     }
 }
