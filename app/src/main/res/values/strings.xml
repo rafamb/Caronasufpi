@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Caronasufpi</string>
+    <string name="title_activity_mapas_caronas">Map</string>
+    <string-array name="spinner">
+        <item>CCN / RU1</item>
+        <item>CCA RU3</item>
+        <item>CCE</item>
+        <item>CCHL</item>
+        <item>CT</item>
+        <item>BCCB / RU2</item>
+    </string-array>
+    <string-array name="spinner2">
+        <item>CCN / RU1</item>
+        <item>CCA RU3</item>
+        <item>CCE</item>
+        <item>CCHL</item>
+        <item>CT</item>
+        <item>BCCB / RU2</item>
+    </string-array>
+    <string name="title_activity_maps">Map</string>
+</resources>

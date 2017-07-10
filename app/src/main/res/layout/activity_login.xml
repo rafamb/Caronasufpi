@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="br.ufpi.es.caronasufpi.visao.Login">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="CARONAS UFPI"
+        android:id="@+id/textView"
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Logar"
+        android:id="@+id/buttonLogar"
+        android:singleLine="false"
+        android:onClick="login"
+        android:layout_above="@+id/button2"
+        android:layout_alignLeft="@+id/button2"
+        android:layout_alignStart="@+id/button2" />
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Logar com o Facebook"
+        android:id="@+id/button2"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="44dp" />
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:id="@+id/imageView"
+        android:background="@drawable/logo"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/textView"
+        android:layout_alignEnd="@+id/textView" />
+
+    <EditText
+        android:layout_width="700dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextEmail"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:hint="Usuário"/>
+
+    <EditText
+        android:layout_width="700dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextSenha"
+        android:hint="Senha"
+        android:layout_below="@+id/editTextEmail"
+        android:layout_alignParentStart="true" />
+
+
+
+    <TextView
+        android:layout_width="500dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Esqueci minha senha"
+        android:id="@+id/esquecisenha"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/buttonLogar"
+        android:layout_alignEnd="@+id/buttonLogar"
+        android:layout_marginRight="43dp"
+        android:layout_marginEnd="43dp"
+        android:textColor="#fe0202"
+        android:onClick="esqueciSenha" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Criar usuário"
+        android:id="@+id/textView3"
+        android:textColor="#fe0202"
+        android:layout_alignTop="@+id/esquecisenha"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+</RelativeLayout>
