@@ -15,7 +15,7 @@ import br.ufpi.es.caronasufpi.R;
 
 import br.ufpi.es.caronasufpi.dados.Usuario;
 
-public class ListaViagens extends AppCompatActivity {
+public class ListaCaronas extends AppCompatActivity {
     Usuario usuario = new Usuario();
 
     Spinner sistema;
