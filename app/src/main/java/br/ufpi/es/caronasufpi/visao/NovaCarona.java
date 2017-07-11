@@ -72,7 +72,8 @@ public class NovaCarona extends AppCompatActivity {
     }
 
     public void inserirViagem(){
-        new ControladorCarona().novaCarona();
+        new ControladorCarona().novaCarona(horario.getText().toString(),sistema.getSelectedItem().toString(),
+                sistema2.getSelectedItem().toString(),usuario);
     }
 
     static private LatLng localizarPonto(Spinner s){
