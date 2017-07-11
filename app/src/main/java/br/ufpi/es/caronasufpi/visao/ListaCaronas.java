@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -20,6 +21,9 @@ public class ListaCaronas extends AppCompatActivity {
 
     Spinner sistema;
     Spinner sistema2;
+
+    private Bundle bundle = new Bundle();
+    private Button botao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +45,16 @@ public class ListaCaronas extends AppCompatActivity {
         sistema2 = (Spinner) findViewById(R.id.spinner2);
         ArrayAdapter adapter2 = ArrayAdapter.createFromResource(this,R.array.spinner2,android.R.layout.simple_spinner_item);
         sistema2.setAdapter(adapter2);
+
+        botao = (Button) findViewById(R.id.button3);
+        botao.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                irMapa(view);
+            }
+        });
     }
 
     public void listarViagens(){
@@ -70,13 +84,19 @@ public class ListaCaronas extends AppCompatActivity {
         sistema2 = (Spinner) findViewById(R.id.spinner2);
         LatLng l1 = localizarPonto(sistema);
         LatLng l2 = localizarPonto(sistema2);
-        String texto = String.valueOf(l1.toString()) + " - " + String.valueOf(l2.toString());
-        Toast.makeText(getApplicationContext(),texto,Toast.LENGTH_LONG).show();
+        String local1 = sistema.getSelectedItem().toString();
+        String local2 = sistema2.getSelectedItem().toString();
 
+        bundle.putDouble("lat1",l1.latitude);
+        bundle.putDouble("long1",l1.longitude);
+        bundle.putString("local1",local1);
+        bundle.putDouble("lat2",l2.latitude);
+        bundle.putDouble("long2",l2.longitude);
+        bundle.putString("local2",local2);
+        bundle.putInt("flag",0);
         Intent intent = new Intent(this, MapasCaronas.class);
-        //carrega a tela principal e passa dados do Usuario
+        intent.putExtras(bundle);
+
         startActivity(intent);
-
-
     }
 }

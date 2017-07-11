@@ -51,18 +51,17 @@ public class Login extends AppCompatActivity {
                 }else {
                     //erro de autenticacao
                     String mensagemErroAutenticacao = "Erro de autenticação";
-                    Toast toat = Toast.makeText(this, mensagemErroAutenticacao, Toast.LENGTH_LONG);
-                    toat.show();
+                    Toast toast = Toast.makeText(this, mensagemErroAutenticacao, Toast.LENGTH_LONG);
+                    toast.show();
                     limpaCamposEntrada();
                 }
             }else {
                 //erro de autenticacao
                 String mensagemErroAutenticacao = "Usuario não existe!";
-                Toast toat = Toast.makeText(this, mensagemErroAutenticacao, Toast.LENGTH_LONG);
-                toat.show();
+                Toast toast = Toast.makeText(this, mensagemErroAutenticacao, Toast.LENGTH_LONG);
+                toast.show();
                 limpaCamposEntrada();
             }
-
         } catch (Exception ex) {
             Toast toast = Toast.makeText(this, ex.getMessage(), Toast.LENGTH_LONG);
             toast.show();
@@ -82,8 +81,12 @@ public class Login extends AppCompatActivity {
         toast.show();
     }
 
+    /**
+     * Limpa os campos de usuario e senha da tela corrente
+     */
     public void limpaCamposEntrada(){
         usuario.setText("");
         senha.setText("");
     }
+
 }

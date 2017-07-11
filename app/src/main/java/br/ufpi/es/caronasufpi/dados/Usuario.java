@@ -1,14 +1,13 @@
 package br.ufpi.es.caronasufpi.dados;
 
-/**
- * Created by armandosoaressousa on 19/06/17.
- */
+
 public class Usuario {
     private String nome;
     private String email;
     private String senha;
     private String sexo;
     private String endereco;
+
 
     public String getNome() {
         return nome;

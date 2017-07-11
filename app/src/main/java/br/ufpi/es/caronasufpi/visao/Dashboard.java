@@ -49,7 +49,7 @@ public class Dashboard extends AppCompatActivity {
     public void inserirViagem(View v){
         //chama a Tela de inserir uma nova viagem
         // pode ser viagem de lazer ou de negocios
-        Intent intentInserirViagens = new Intent(this, NovaViagem.class);
+        Intent intentInserirViagens = new Intent(this, NovaCarona.class);
         intentInserirViagens.putExtras(bundleUsuario);
         //carrega a tela principal e passa dados do Usuario
         startActivity(intentInserirViagens);

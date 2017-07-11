@@ -1,24 +1,40 @@
 package br.ufpi.es.caronasufpi.visao;
 
 import android.content.Intent;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 import br.ufpi.es.caronasufpi.controle.ControladorCarona;
 import br.ufpi.es.caronasufpi.dados.Usuario;
 import br.ufpi.es.caronasufpi.R;
 
-public class NovaViagem extends AppCompatActivity {
+
+public class NovaCarona extends AppCompatActivity {
     Usuario usuario = new Usuario();
+
+    private EditText horario;
+    private EditText vagas;
 
     Spinner sistema;
     Spinner sistema2;
+
+    private Bundle bundle = new Bundle();
+
+    private Button botao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,13 +56,26 @@ public class NovaViagem extends AppCompatActivity {
         sistema2 = (Spinner) findViewById(R.id.spinner2);
         ArrayAdapter adapter2 = ArrayAdapter.createFromResource(this,R.array.spinner2,android.R.layout.simple_spinner_item);
         sistema2.setAdapter(adapter2);
+
+        horario = (EditText) findViewById(R.id.editText);
+        vagas = (EditText) findViewById(R.id.editText2);
+
+        botao = (Button) findViewById(R.id.button3);
+        botao.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                irMapa(view);
+            }
+        });
     }
 
     public void inserirViagem(){
-        new ControladorCarona().novaViagem(usuario, null);
+        new ControladorCarona().novaCarona();
     }
 
-    private LatLng localizarPonto(Spinner s){
+    static private LatLng localizarPonto(Spinner s){
         long r = s.getSelectedItemId();
         if(r == 0){
             return new LatLng(-5.055872, -42.788638);
@@ -69,13 +98,21 @@ public class NovaViagem extends AppCompatActivity {
         sistema2 = (Spinner) findViewById(R.id.spinner2);
         LatLng l1 = localizarPonto(sistema);
         LatLng l2 = localizarPonto(sistema2);
-        String texto = String.valueOf(l1.toString()) + " - " + String.valueOf(l2.toString());
-        Toast.makeText(getApplicationContext(),texto,Toast.LENGTH_LONG).show();
+        String local1 = sistema.getSelectedItem().toString();
+        String local2 = sistema2.getSelectedItem().toString();
 
-        Intent intent = new Intent(getApplicationContext(), MapasCaronas.class);
-        //carrega a tela principal e passa dados do Usuario
+        bundle.putDouble("lat1",l1.latitude);
+        bundle.putDouble("long1",l1.longitude);
+        bundle.putString("local1",local1);
+        bundle.putDouble("lat2",l2.latitude);
+        bundle.putDouble("long2",l2.longitude);
+        bundle.putString("local2",local2);
+        bundle.putInt("flag",1);
+        Intent intent = new Intent(this, MapasCaronas.class);
+        intent.putExtras(bundle);
+
         startActivity(intent);
 
-
     }
+
 }

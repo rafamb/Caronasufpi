@@ -8,27 +8,25 @@
          location permissions for the 'MyLocation' functionality. 
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="br.ufpi.es.caronasufpi.visao.Login">
+        <activity android:name=".visao.Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="br.ufpi.es.caronasufpi.visao.Dashboard" />
-        <activity android:name="br.ufpi.es.caronasufpi.visao.ListaCaronas" />
-        <activity android:name="br.ufpi.es.caronasufpi.visao.NovaViagem" />
-        <activity android:name="br.ufpi.es.caronasufpi.visao.NovoGasto" />
-        <activity android:name="br.ufpi.es.caronasufpi.visao.Configuracoes" />
-        <activity android:name="br.ufpi.es.caronasufpi.visao.Sobre" />
+        <activity android:name=".visao.Dashboard" />
+        <activity android:name=".visao.ListaCaronas" />
+        <activity android:name=".visao.NovaCarona" />
+        <activity android:name=".visao.NovoGasto" />
+        <activity android:name=".visao.Configuracoes" />
+        <activity android:name=".visao.Sobre" />
 
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -44,7 +42,7 @@
 
         <activity
             android:name=".visao.MapasCaronas"
-            android:label="@string/title_activity_mapas_caronas"></activity>
+            android:label="@string/title_activity_mapas_caronas" />
     </application>
 
 </manifest>
