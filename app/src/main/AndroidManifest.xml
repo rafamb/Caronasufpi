@@ -27,6 +27,7 @@
         <activity android:name=".visao.NovoGasto" />
         <activity android:name=".visao.Configuracoes" />
         <activity android:name=".visao.Sobre" />
+        <activity android:name=".visao.ListarCaronas" />
 
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.

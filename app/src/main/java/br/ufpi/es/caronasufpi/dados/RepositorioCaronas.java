@@ -13,6 +13,7 @@ public class RepositorioCaronas {
 
     public RepositorioCaronas(){
         this.caronas = new LinkedList<Carona>();
+        popularRepositorio();
     }
 
     public void insereCarona(Carona c){
@@ -32,5 +33,20 @@ public class RepositorioCaronas {
     public List<Carona> getCaronas(){
         return caronas;
     }
+
+    private void popularRepositorio(){
+        RepositorioUsuarios repositorioUsuarios = new RepositorioUsuarios();
+        Usuario u = repositorioUsuarios.buscaUsuario("rafael");
+        Carona c1 = new Carona("15:00","CCN / RU1","CCA RU3",3,u);
+        Carona c2 = new Carona("12:00","CCN / RU1","CCA RU3",2,u);
+        Carona c3 = new Carona("07:00","CCN / RU1","CCA RU3",1,u);
+        Carona c4 = new Carona("19:00","CCN / RU1","CCA RU3",4,u);
+
+        insereCarona(c1);
+        insereCarona(c2);
+        insereCarona(c3);
+        insereCarona(c4);
+    }
+
 
 }

@@ -24,6 +24,7 @@ public class MapasCaronas extends FragmentActivity implements OnMapReadyCallback
     String local1;
     String local2;
     int flag;
+    private Bundle bundle;
 
     private Button botao;
 
@@ -79,7 +80,11 @@ public class MapasCaronas extends FragmentActivity implements OnMapReadyCallback
 
     public void efetivar(View view){
         if(flag==0){
-            Intent intent = new Intent(this, PesquisarCaronas.class);
+            bundle = new Bundle();
+            bundle.putString("origem",local1);
+            bundle.putString("destino",local2);
+            Intent intent = new Intent(this, ListarCaronas.class);
+            intent.putExtras(bundle);
             startActivity(intent);
         } else {
             Intent intent = new Intent(this, NovaCarona.class);

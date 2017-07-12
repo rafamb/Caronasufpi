@@ -7,11 +7,9 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import com.google.android.gms.maps.model.LatLng;
 
-import br.ufpi.es.caronasufpi.controle.ControladorCarona;
 import br.ufpi.es.caronasufpi.R;
 
 import br.ufpi.es.caronasufpi.dados.Usuario;
@@ -28,7 +26,7 @@ public class PesquisarCaronas extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lista_viagens);
+        setContentView(R.layout.activity_pesq_caronas);
 
         //pega dados do usuario corrente da aplicacao
         Bundle dadosUsuario = getIntent().getExtras();

@@ -26,6 +26,10 @@ public class Carona {
 
     public int getVagas(){ return vagas; }
 
+    public Usuario getMotorista() {
+        return motorista;
+    }
+
     public void adicionarCaroneiro(Usuario u){
         caroneiros.add(u);
     }

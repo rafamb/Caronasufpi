@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="br.ufpi.es.caronasufpi.visao.PesquisarCaronas">
+    tools:context="br.ufpi.es.caronasufpi.visao.ListarCaronas">
 
     <TextView
         android:id="@+id/TexViewCaronas"
@@ -21,7 +21,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:weightSum="1">
 
         <ListView
             android:id="@+id/listViewCaronas"
@@ -29,18 +30,12 @@
             android:layout_height="match_parent"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="25dp" />
+            android:layout_marginTop="25dp"
+            android:layout_weight="8.24" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/buttonMapa"
-                android:text="Mapa de Caronas"
-                android:onClick="irMapa" />
 
         </LinearLayout>
 
