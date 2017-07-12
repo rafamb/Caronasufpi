@@ -36,7 +36,7 @@ public class ListaCaronas extends AppCompatActivity {
             usuario.setNome(dadosUsuario.getString("nomeUsuario"));
             usuario.setEmail(dadosUsuario.getString("emailUsuario"));
         }
-        this.listarViagens();
+       // this.listarViagens();
 
         sistema = (Spinner) findViewById(R.id.spinner);
         ArrayAdapter adapter = ArrayAdapter.createFromResource(this,R.array.spinner,android.R.layout.simple_spinner_item);
@@ -57,9 +57,9 @@ public class ListaCaronas extends AppCompatActivity {
         });
     }
 
-    public void listarViagens(){
-        new ControladorCarona().listarViagens(usuario);
-    }
+    //public void listarViagens(){
+        //new ControladorCarona().listarViagens(usuario);
+    //}
 
     private LatLng localizarPonto(Spinner s){
         long r = s.getSelectedItemId();
