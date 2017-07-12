@@ -28,6 +28,8 @@ public class MapasCaronas extends FragmentActivity implements OnMapReadyCallback
     String local2;
     int flag;
     private Bundle bundle;
+    String horario;
+    int vagas;
 
     private Button botao;
 
@@ -45,6 +47,10 @@ public class MapasCaronas extends FragmentActivity implements OnMapReadyCallback
             flag = pontos.getInt("flag");
             usuario.setNome(pontos.getString("nomeUsuario"));
             usuario.setEmail(pontos.getString("emailUsuario"));
+            if(flag != 0){
+                horario = pontos.getString("horario");
+                vagas = pontos.getInt("vagas");
+            }
         }
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
@@ -86,17 +92,20 @@ public class MapasCaronas extends FragmentActivity implements OnMapReadyCallback
     }
 
     public void efetivar(View view){
+        bundle = new Bundle();
+        bundle.putString("origem",local1);
+        bundle.putString("destino",local2);
+        bundle.putString("nomeUsuario",usuario.getNome());
+        bundle.putString("emailUsuario",usuario.getEmail());
         if(flag==0){
-            bundle = new Bundle();
-            bundle.putString("origem",local1);
-            bundle.putString("destino",local2);
-            bundle.putString("nomeUsuario",usuario.getNome());
-            bundle.putString("emailUsuario",usuario.getEmail());
             Intent intent = new Intent(this, ListarCaronas.class);
             intent.putExtras(bundle);
             startActivity(intent);
         } else {
+            bundle.putString("horario",horario);
+            bundle.putInt("vagas",vagas);
             Intent intent = new Intent(this, NovaCarona.class);
+            intent.putExtras(bundle);
             startActivity(intent);
         }
 

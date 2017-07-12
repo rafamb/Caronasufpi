@@ -109,6 +109,8 @@ public class NovaCarona extends AppCompatActivity {
         bundle.putDouble("long2",l2.longitude);
         bundle.putString("local2",local2);
         bundle.putInt("flag",1);
+        bundle.putString("horario",horario.getText().toString());
+        bundle.putInt("vagas",Integer.parseInt(vagas.getText().toString()));
         Intent intent = new Intent(this, MapasCaronas.class);
         intent.putExtras(bundle);
 
