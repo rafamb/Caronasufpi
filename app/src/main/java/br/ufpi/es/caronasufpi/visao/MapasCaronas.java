@@ -79,7 +79,7 @@ public class MapasCaronas extends FragmentActivity implements OnMapReadyCallback
 
     public void efetivar(View view){
         if(flag==0){
-            Intent intent = new Intent(this, ListaCaronas.class);
+            Intent intent = new Intent(this, PesquisarCaronas.class);
             startActivity(intent);
         } else {
             Intent intent = new Intent(this, NovaCarona.class);

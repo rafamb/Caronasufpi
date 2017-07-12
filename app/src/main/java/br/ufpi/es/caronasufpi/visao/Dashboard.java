@@ -39,7 +39,7 @@ public class Dashboard extends AppCompatActivity {
     //listarViagens
     public void listarViagens(View v){
         //chama a Tela de listar viagens ja registradas
-        Intent intentListarViagens = new Intent(this, ListaCaronas.class);
+        Intent intentListarViagens = new Intent(this, PesquisarCaronas.class);
         intentListarViagens.putExtras(bundleUsuario);
         //carrega a tela principal e passa dados do Usuario
         startActivity(intentListarViagens);

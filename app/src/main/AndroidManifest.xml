@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".visao.Dashboard" />
-        <activity android:name=".visao.ListaCaronas" />
+        <activity android:name=".visao.PesquisarCaronas" />
         <activity android:name=".visao.NovaCarona" />
         <activity android:name=".visao.NovoGasto" />
         <activity android:name=".visao.Configuracoes" />
