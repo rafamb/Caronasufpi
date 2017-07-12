@@ -28,6 +28,7 @@
         <activity android:name=".visao.Configuracoes" />
         <activity android:name=".visao.Sobre" />
         <activity android:name=".visao.ListarCaronas" />
+        <activity android:name=".visao.Gerenciar" />
         <activity android:name=".visao.CaronaDesejada" />
 
         <!--

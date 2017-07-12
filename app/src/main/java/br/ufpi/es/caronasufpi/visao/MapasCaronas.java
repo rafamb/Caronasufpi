@@ -97,6 +97,7 @@ public class MapasCaronas extends FragmentActivity implements OnMapReadyCallback
         bundle.putString("destino",local2);
         bundle.putString("nomeUsuario",usuario.getNome());
         bundle.putString("emailUsuario",usuario.getEmail());
+        System.out.println(usuario.getEmail());
         if(flag==0){
             Intent intent = new Intent(this, ListarCaronas.class);
             intent.putExtras(bundle);
@@ -104,7 +105,7 @@ public class MapasCaronas extends FragmentActivity implements OnMapReadyCallback
         } else {
             bundle.putString("horario",horario);
             bundle.putInt("vagas",vagas);
-            Intent intent = new Intent(this, NovaCarona.class);
+            Intent intent = new Intent(this, Gerenciar.class);
             intent.putExtras(bundle);
             startActivity(intent);
         }

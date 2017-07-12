@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="br.ufpi.es.caronasufpi.visao.CaronaDesejada">
+    tools:context="br.ufpi.es.caronasufpi.visao.Gerenciar">
 
 
     <Button
@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:text="Efetivar Carona" />
+        android:text="Ok" />
 
     <TextView
         android:id="@+id/textView9"
@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:text="Carona desejada" />
+        android:text="Gerenciar Carona" />
 
     <TextView
         android:id="@+id/textView10"
@@ -39,10 +39,10 @@
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/textView10"
-        android:layout_below="@+id/textView10"
         android:layout_marginTop="145dp"
-        android:text="Passageiros" />
+        android:text="Passageiros"
+        android:layout_below="@+id/textView10"
+        android:layout_alignStart="@+id/textView10" />
 
     <TextView
         android:id="@+id/textView12"
@@ -106,29 +106,28 @@
         android:layout_alignParentEnd="true" />
 
     <TextView
-        android:id="@+id/textView17"
+        android:id="@+id/nome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/textView14"
         android:layout_marginStart="15dp"
         android:layout_toEndOf="@+id/textView14"
-        android:text="nome" />
+        android:editable="true"
+        />
 
     <TextView
-        android:id="@+id/textView18"
+        android:id="@+id/email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/textView17"
-        android:layout_alignTop="@+id/textView15"
-        android:text="email" />
+        android:layout_alignStart="@+id/nome"
+        android:layout_alignTop="@+id/textView15"/>
 
     <TextView
-        android:id="@+id/textView19"
+        android:id="@+id/sexo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/textView18"
-        android:text="sexo"
-        android:layout_alignBottom="@+id/textView16" />
+        android:layout_alignBottom="@+id/textView16"
+        android:layout_alignStart="@+id/email"/>
 
 
 </RelativeLayout>

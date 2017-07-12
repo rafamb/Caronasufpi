@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Carona {
+    private int id;
     private String horario;
     private String origem;
     private String destino;
@@ -36,6 +37,18 @@ public class Carona {
 
     public void removerCaroneiro(Usuario u){
         caroneiros.remove(u);
+    }
+
+    public List<Usuario> getCaroneiros(){
+        return caroneiros;
+    }
+
+    public int getId(){
+        return id;
+    }
+
+    public void setId(int id){
+        this.id = id;
     }
 
     public Carona(String horario,String origem, String destino, int vagas , Usuario u){

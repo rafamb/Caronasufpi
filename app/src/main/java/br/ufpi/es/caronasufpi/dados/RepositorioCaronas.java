@@ -30,6 +30,19 @@ public class RepositorioCaronas {
         return c;
     }
 
+    public Carona pesqId(int id){
+        for(Carona c: caronas){
+            if(c.getId()==id){
+                return c;
+            }
+        }
+        return null;
+    }
+
+    public void adicionarPassageiro(Carona c,Usuario u){
+        c.adicionarCaroneiro(u);
+    }
+
     public List<Carona> getCaronas(){
         return caronas;
     }
@@ -41,6 +54,17 @@ public class RepositorioCaronas {
         Carona c2 = new Carona("12:00","CCN / RU1","CCA RU3",2,u);
         Carona c3 = new Carona("07:00","CCN / RU1","CCA RU3",1,u);
         Carona c4 = new Carona("19:00","CCN / RU1","CCA RU3",4,u);
+
+        u = repositorioUsuarios.buscaUsuario("mauboa");
+        System.out.println("---"+u.getNome());
+        c1.setId(1);
+        c2.setId(2);
+        c3.setId(3);
+        c4.setId(4);
+        c1.adicionarCaroneiro(u);
+        c2.adicionarCaroneiro(u);
+        c3.adicionarCaroneiro(u);
+        c4.adicionarCaroneiro(u);
 
         insereCarona(c1);
         insereCarona(c2);

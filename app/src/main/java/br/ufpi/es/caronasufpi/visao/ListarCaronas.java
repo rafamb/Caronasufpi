@@ -1,5 +1,6 @@
 package br.ufpi.es.caronasufpi.visao;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -57,7 +58,11 @@ public class ListarCaronas extends AppCompatActivity {
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                caronas.get(position);
+                Bundle b = new Bundle();
+                b.putString("nomeUsuario",usuario.getNome());
+                b.putString("emailUsuario",usuario.getEmail());
+                b.putInt("id",caronas.get(position).getId());
+                criarIntent(b);
             }
         });
 
@@ -65,6 +70,12 @@ public class ListarCaronas extends AppCompatActivity {
 
     private void listarCaronas(){
         caronas = new ControladorCarona().listarCaronas(origem,destino);
+    }
+
+    private void criarIntent(Bundle b){
+        Intent intent = new Intent(this, CaronaDesejada.class);
+        intent.putExtras(b);
+        startActivity(intent);
     }
 
 }
