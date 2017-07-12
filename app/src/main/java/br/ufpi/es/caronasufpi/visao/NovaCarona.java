@@ -47,7 +47,7 @@ public class NovaCarona extends AppCompatActivity {
             usuario.setNome(dadosUsuario.getString("nomeUsuario"));
             usuario.setEmail(dadosUsuario.getString("emailUsuario"));
         }
-        this.inserirViagem();
+        //this.inserirViagem();
 
         sistema = (Spinner) findViewById(R.id.spinner);
         ArrayAdapter adapter = ArrayAdapter.createFromResource(this,R.array.spinner,android.R.layout.simple_spinner_item);
@@ -71,10 +71,10 @@ public class NovaCarona extends AppCompatActivity {
         });
     }
 
-    public void inserirViagem(){
+    /*public void inserirViagem(){
         new ControladorCarona().novaCarona(horario.getText().toString(),sistema.getSelectedItem().toString(),
                 sistema2.getSelectedItem().toString(),usuario);
-    }
+    }*/
 
     static private LatLng localizarPonto(Spinner s){
         long r = s.getSelectedItemId();
