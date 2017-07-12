@@ -9,6 +9,7 @@ public class RepositorioUsuarios {
 
     public RepositorioUsuarios(){
         this.usuarios = new LinkedList<Usuario>();
+        popoulaRepositorioUsuarios();
     }
 
     public void insereUsuario(Usuario usuario){
@@ -41,6 +42,14 @@ public class RepositorioUsuarios {
         usuario1.setSenha("123");
         usuario1.setSexo("Masculino");
 
+        Usuario usuario2 = new Usuario();
+        usuario2.setNome("Mauricio Boaventura");
+        usuario2.setEmail("mauboa");
+        usuario2.setEndereco("Rua 31 de Março");
+        usuario2.setSenha("123");
+        usuario2.setSexo("Masculino");
+
         insereUsuario(usuario1);
+        insereUsuario(usuario2);
     }
 }

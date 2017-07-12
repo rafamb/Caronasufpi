@@ -16,7 +16,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:onClick="irMapa"
         android:text="Efetivar Carona" />
 
     <TextView
@@ -40,10 +39,10 @@
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="145dp"
-        android:text="passageiro"
+        android:layout_alignStart="@+id/textView10"
         android:layout_below="@+id/textView10"
-        android:layout_alignStart="@+id/textView10" />
+        android:layout_marginTop="145dp"
+        android:text="Passageiros" />
 
     <TextView
         android:id="@+id/textView12"

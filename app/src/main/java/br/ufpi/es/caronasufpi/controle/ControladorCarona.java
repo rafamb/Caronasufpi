@@ -20,4 +20,15 @@ public class ControladorCarona {
         r = new RepositorioCaronas();
         r.insereCarona(c);
     }
+
+    public Carona pesquisarId(int id){
+        Carona carona = null;
+        r = new RepositorioCaronas();
+        return r.pesqId(id);
+    }
+
+    public void adicionarPassageiro(Carona c,Usuario u){
+        r = new RepositorioCaronas();
+
+    }
 }
