@@ -14,10 +14,13 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import br.ufpi.es.caronasufpi.R;
+import br.ufpi.es.caronasufpi.dados.Usuario;
 
 public class MapasCaronas extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+
+    Usuario usuario = new Usuario();
 
     private LatLng l1;
     private LatLng l2;
@@ -34,11 +37,15 @@ public class MapasCaronas extends FragmentActivity implements OnMapReadyCallback
         setContentView(R.layout.activity_mapas_caronas);
 
         Bundle pontos = getIntent().getExtras();
-        l1 = new LatLng(pontos.getDouble("lat1"),pontos.getDouble("long1"));
-        l2 = new LatLng(pontos.getDouble("lat2"),pontos.getDouble("long2"));
-        local1 = pontos.getString("local1");
-        local2 = pontos.getString("local2");
-        flag = pontos.getInt("flag");
+        if (pontos != null){
+            l1 = new LatLng(pontos.getDouble("lat1"),pontos.getDouble("long1"));
+            l2 = new LatLng(pontos.getDouble("lat2"),pontos.getDouble("long2"));
+            local1 = pontos.getString("local1");
+            local2 = pontos.getString("local2");
+            flag = pontos.getInt("flag");
+            usuario.setNome(pontos.getString("nomeUsuario"));
+            usuario.setEmail(pontos.getString("emailUsuario"));
+        }
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -83,6 +90,8 @@ public class MapasCaronas extends FragmentActivity implements OnMapReadyCallback
             bundle = new Bundle();
             bundle.putString("origem",local1);
             bundle.putString("destino",local2);
+            bundle.putString("nomeUsuario",usuario.getNome());
+            bundle.putString("emailUsuario",usuario.getEmail());
             Intent intent = new Intent(this, ListarCaronas.class);
             intent.putExtras(bundle);
             startActivity(intent);

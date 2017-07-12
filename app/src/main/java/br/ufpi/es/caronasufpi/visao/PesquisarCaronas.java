@@ -92,6 +92,8 @@ public class PesquisarCaronas extends AppCompatActivity {
         bundle.putDouble("long2",l2.longitude);
         bundle.putString("local2",local2);
         bundle.putInt("flag",0);
+        bundle.putString("nomeUsuario",usuario.getNome());
+        bundle.putString("emailUsuario",usuario.getEmail());
         Intent intent = new Intent(this, MapasCaronas.class);
         intent.putExtras(bundle);
 
