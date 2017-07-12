@@ -19,7 +19,7 @@ public class RepositorioCaronas {
         caronas.add(c);
     }
 
-    public List<Carona> buscaCarona(String origem, String destino){
+    public List<Carona> buscaCaronas(String origem, String destino){
         List<Carona> c = new ArrayList<Carona>();
         for(Carona carona:caronas){
             if(carona.getOrigem().equals(origem) && carona.getDestino().equals(destino)){
